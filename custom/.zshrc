@@ -36,7 +36,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github vundle history-substring-search debian zsh rbenv)
+plugins=(aws compleat debian docker encode64 git github history-substring-search rbenv vundle zsh)
 
 # fix UTF-8 error in Octopress
 # http://alexzeitler.com/blog/2012/01/15/rake-generate-for-octopress-fails-with-invalid-byte-sequence-in-us-ascii-argumenterror/
@@ -67,6 +67,13 @@ setopt AUTO_CD
 # fix autocorrect suggesting dotfiles, only for zsh so don't put this in .aliases
 # https://news.ycombinator.com/item?id=5692320
 alias sudo="nocorrect sudo"
+
+# add source highlighting to LESS
+# http://blog.tersmitten.nl/how-to-enable-syntax-highlighting-in-less.html
+# solves the error:
+# zsh:1: no such file or directory: /usr/share/source-highlight/src-hilite-lesspipe.sh
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESS=' -R '
 
 # check for updates, init shell
 source $ZSH/oh-my-zsh.sh
