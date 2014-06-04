@@ -7,6 +7,10 @@ source "$HOME/.env"
 # Customize to your needs...
 source $HOME/.aliases
 
+# bash has a help command, in zsh it's run-help.  .xmonad/xmonad.hs needs `help`, 
+# trips up on run-help, so alias run-help to help in zsh only.
+alias help='run-help'
+
 # Terminal 256 colors
 export TERM="xterm-256color"
 
